@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!-- Dữ liệu sẽ được thêm bằng aaaaaJavaScript -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Center Preview</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <i class="fas fa-headset"></i> Contact Center
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-home"></i> Trang chủ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-search"></i> Tra cứu
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-chart-bar"></i> Báo cáo
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Thêm vào đầu file, trướcsearch section -->
+        
+
+        <!-- Thêm ngay sau thẻ đóng </nav> -->
+        <div class="top-section">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="https://www.gravatar.com/avatar/default?s=200" alt="User Avatar">
+                </div>
+                <div class="user-info">
+                    <div class="user-name">Nguyễn Văn A</div>
+                    <div class="user-details">
+                        <p>ID: NV001</p>
+                        <p>Phòng ban: Chăm sóc khách hàng</p>
+                        <div class="user-status">
+                            <span class="status-indicator"></span>
+                            <span>Đang hoạt động</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <button class="user-action-btn">
+                        <i class="fas fa-user-cog"></i>
+                    </button>
+                    <button class="user-action-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="recent-calls">
+                <div class="recent-calls-header">
+                    Cuộc gọi gần đây
+                </div>
+                <table class="recent-calls-table">
+                    <thead>
+                        <tr>
+                            <th>Thời gian</th>
+                            <th>Số điện thoại</th>
+                            <th>Trạng thái</th>
+                            <th>Thời lượng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Mẫu dữ liệu -->
+                        <tr>
+                            <td>10:45:23</td>
+                            <td>0123456789</td>
+                            <td><span class="call-status incoming">Đã tiếp nhận</span></td>
+                            <td>05:23</td>
+                        </tr>
+                        <tr>
+                            <td>10:30:15</td>
+                            <td>0987654321</td>
+                            <td><span class="call-status missed">Nhỡ</span></td>
+                            <td>00:00</td>
+                        </tr>
+                        <!-- Thêm các dòng khác t�ơng tự -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <input type="text" id="searchInput" class="search-input" placeholder="Nhập số điện thoại">
+            <button id="searchButton" class="search-btn" onclick="searchCustomer()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        
+
+        <!-- Info Container -->
+        <div class="info-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="contact-header">
+                    <i class="fas fa-user"></i>
+                    <span>Contact</span>
+                </div>
+                <div class="contact-details">
+                    
+                    <div class="contact-item">
+                        <span>Name:</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>Căn cước/CMT:</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>Mã Khách Hàng:</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>Email:</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MissCall Section -->
+            <div class="misscall-section">
+                <div class="misscall-header">
+                    <span>MissCall</span>
+                    <span class="count">0</span>
+                </div>
+                <div class="update-info">
+                    <div>Last time update misscall: 23/11/2024 16:17:59</div>
+                    <div>Last call: 24/11/2024 14:06:15</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ticket History -->
+        <div class="ticket-history">
+            <h3>Lịch Sử TICKET</h3>
+            <table class="ticket-table">
+                <thead>
+                    <tr>
+                        <th>Thời Gian</th>
+                        <th>Nhu Cầu KH</th>
+                        <th>Nội Dung Trao Đổi</th>
+                        <th>Note</th>
+                        <th>Nhân Viên</th>
+                        <th>Mã Ticket</th>
+                        <th>Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dữ liệu sẽ được thêm vào đây bằng JavaScript -->
+                </tbody>
+            </table>
+          <!-- Thêm vào phần ticket-history, trước bảng -->
+<!-- Cập nhật phần HTML của form -->
+<div class="ticket-form">
+    <div class="form-row">
+        <div class="form-group full-width">
+            <label>Notes</label>
+            <textarea id="noteInput" class="form-control" rows="4"></textarea>
+        </div>
+    </div>
+
+    <div class="form-grid">
+        <div class="form-group">
+            <label>Nhu Cầu Khách Hàng</label>
+            <select id="nhuCauKH" class="form-control">
+                <option value="">Chọn nhu cầu</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Loại DV</label>
+            <select id="loaiDV" class="form-control">
+                <option value="">Chọn loại dịch vụ</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Chi Tiết Nhu Cầu</label>
+            <select id="chiTietNhuCau" class="form-control" disabled>
+                <option value="">Chọn chi tiết</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Trạng thái Xử Lý</label>
+            <select id="trangThai" class="form-control">
+                <option value="">Chọn trạng thái</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Phối Hợp Liên Phòng Ban</label>
+            <select id="phoiHop" class="form-control">
+                <option value="Không">Không</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Kênh Tiếp Nhận</label>
+            <select id="kenhTiepNhan" class="form-control">
+                <option value="Inbound">Inbound</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Ticket Trùng</label>
+            <input type="text" id="ticketTrung" class="form-control">
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <button class="btn-save">Lưu Lại</button>
+    </div>
+</div>
+        </div>
+
+    </div>
+
+    
+
+    <script src="js/main.js"></script>
+</body>
+</html>
